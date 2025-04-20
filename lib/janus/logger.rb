@@ -7,7 +7,7 @@ module Janus
     end
 
     def log(level, message)
-      logger.public_send(level, "[E2eDbSwitcher] #{message}")
+      logger.public_send(level, "[Janus] #{message}")
     end
   end
 end

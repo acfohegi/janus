@@ -5,7 +5,7 @@ module Janus
     isolate_namespace Janus
 
     initializer 'janus.sidekiq' do
-      return unless defined?(Sidekiq) && Janus::DbSwitcher.enabled?
+      next unless defined?(Sidekiq) && Janus::DbSwitcher.enabled?
 
       require 'janus/logger'
       Sidekiq.configure_server do |config|
